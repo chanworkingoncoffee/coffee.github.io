@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coffee Roastery</title>
+    <style>
+        :root {
+            --blue: #95AAB7;
+            --brown: #2C180F;
+            --orange: #FE3D06;
+            --cream: #F4F3EB;
+            --black: #2B2B2B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--brown);
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        /* Overlay for better text readability */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 24, 15, 0.4), rgba(149, 170, 183, 0.3));
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        .logo-container {
+            margin-bottom: 3rem;
+            animation: floatIn 1.5s ease-out;
+        }
+        
+        .logo {
+            max-width: 300px;
+            width: 80vw;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+            transition: transform 0.4s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+        
+        /* Shop Button */
+        .shop-button {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background-color: var(--orange);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(254, 61, 6, 0.3);
+            animation: slideInUp 1s ease-out 0.3s backwards;
+        }
+        
+        .shop-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--brown);
+            transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+        .shop-button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .shop-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(254, 61, 6, 0.4);
+        }
+        
+        .shop-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: var(--brown);
+            color: var(--cream);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--blue), var(--orange));
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--orange);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--cream);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--blue);
+            transform: translateX(5px);
+        }
+        
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--orange) !important;
+            transition: gap 0.3s ease;
+        }
+        
+        .instagram-link:hover {
+            gap: 1rem;
+        }
+        
+        .instagram-link::before {
+            content: '📷';
+            font-size: 1.2rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(149, 170, 183, 0.3);
+            color: var(--blue);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .shop-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                max-width: 220px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+        }
+        
+        /* Placeholder Styling */
+        .placeholder-hero {
+            background: linear-gradient(135deg, var(--brown), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .placeholder-logo {
+            background-color: var(--cream);
+            border: 4px solid var(--orange);
+            padding: 2rem;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brown);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Replace this div with your actual hero image -->
+        <div class="hero-image placeholder-hero">
+            Replace this div with: &lt;img src="your-hero-image.jpg" alt="Coffee" class="hero-image"&gt;
+        </div>
+        
+        <div class="hero-content">
+            <div class="logo-container">
+                <!-- Replace this div with your actual logo -->
+                <div class="placeholder-logo logo">
+                    Your Logo Here
+                </div>
+                <!-- Uncomment and use this when you have your logo:
+                <img src="your-logo.png" alt="Your Coffee Roastery Logo" class="logo">
+                -->
+            </div>
+            
+            <a href="YOUR_SQUARE_SHOP_URL_HERE" class="shop-button">
+                Shop Our Roasts
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>123 Coffee Street<br>
+                Your City, State 12345</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 7am - 6pm<br>
+                Saturday - Sunday: 8am - 5pm</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                <p><a href="mailto:hello@yourcafe.com">hello@yourcafe.com</a></p>
+                <a href="https://instagram.com/yourcafe" target="_blank" class="instagram-link">
+                    @yourcafe
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Coffee Roastery. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
