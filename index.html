@@ -438,15 +438,75 @@
     </section>
 
     <!-- Email Signup Section -->
-    <section class="signup-section">
-        <div class="signup-container">
-            <h2>Stay In Touch</h2>
-            <p>Join our community and be the first to know about new roasts, events, and exclusive offers</p>
-            <div class="form-wrapper">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            </div>
+    <script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+        onload="if(submitted) {document.getElementById('form-wrapper').innerHTML='<p style=\"color: #2e7d32; font-weight: bold;\">✓ Success! You\'ve been added to our list.</p>';}"></iframe>
+
+<style>
+    .signup-section {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #fdfdfd; /* Or your site's background color */
+    }
+    .signup-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .form-wrapper {
+        margin-top: 30px;
+    }
+    .custom-form {
+        display: flex;
+        justify-content: center;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .custom-form input[type="email"] {
+        flex: 1;
+        padding: 15px;
+        border: 1px solid #000;
+        border-right: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .custom-form button {
+        padding: 15px 30px;
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #000;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .custom-form button:hover {
+        background-color: #333;
+    }
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+        .custom-form { display: block; }
+        .custom-form input[type="email"] { width: 100%; border-right: 1px solid #000; margin-bottom: 10px; }
+        .custom-form button { width: 100%; }
+    }
+</style>
+
+<section class="signup-section">
+    <div class="signup-container">
+        <h2>Stay In Touch</h2>
+        <p>Join our community and be the first to know about new roasts, events, and exclusive offers</p>
+        
+        <div class="form-wrapper" id="form-wrapper">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
+                  method="POST" 
+                  target="hidden_iframe" 
+                  onsubmit="submitted=true;" 
+                  class="custom-form">
+                
+                <input type="email" name="entry.504539600" placeholder="Enter your email address" required>
+                <button type="submit">JOIN</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- Footer Section -->
     <footer class="footer">
