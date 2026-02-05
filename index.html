@@ -438,74 +438,114 @@
     </section>
 
     <!-- Email Signup Section -->
-    <script type="text/javascript">var submitted=false;</script>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-        onload="if(submitted) {document.getElementById('form-wrapper').innerHTML='<p style=\"color: #2e7d32; font-weight: bold;\">✓ Success! You\'ve been added to our list.</p>';}"></iframe>
+<script type="text/javascript">
+  var submitted = false;
+  function handleFormSubmit() {
+    if (submitted) {
+      document.getElementById('form-wrapper').innerHTML = 
+        '<div style="color: #2C180F; font-weight: bold; padding: 20px; border: 1px solid #95AAB7; background: #F4F3EB;">' +
+        '✓ Success! You\'ve been added to our list.</div>';
+    }
+  }
+</script>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSubmit();"></iframe>
 
 <style>
-    .signup-section {
-        padding: 60px 20px;
-        text-align: center;
-        background-color: #fdfdfd; /* Or your site's background color */
-    }
-    .signup-container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .form-wrapper {
-        margin-top: 30px;
-    }
+  .signup-section {
+    padding: 60px 20px;
+    text-align: center;
+    /* Clean background, no gray */
+    background-color: transparent; 
+    color: #2C180F; /* Brown Text */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .signup-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-wrapper {
+    margin-top: 30px;
+  }
+
+  .custom-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #F4F3EB; /* Cream Background */
+    border: 1px solid #2C180F; /* Brown Border */
+  }
+
+  .custom-form input[type="email"] {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: #F4F3EB; /* Cream Background */
+    color: #2C180F; /* Brown Text */
+    font-size: 16px;
+  }
+
+  /* Styling the placeholder text color */
+  .custom-form input::placeholder {
+    color: #2C180F;
+    opacity: 0.6;
+  }
+
+  .custom-form button {
+    padding: 15px 35px;
+    background-color: #95AAB7; /* Blue Button */
+    color: #F4F3EB; /* Cream Text for contrast */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+  }
+
+  .custom-form button:hover {
+    opacity: 0.8;
+  }
+
+  /* Mobile Responsive: Stacks on small screens */
+  @media (max-width: 480px) {
     .custom-form {
-        display: flex;
-        justify-content: center;
-        max-width: 450px;
-        margin: 0 auto;
+      display: block;
+      background-color: transparent;
+      border: none;
     }
     .custom-form input[type="email"] {
-        flex: 1;
-        padding: 15px;
-        border: 1px solid #000;
-        border-right: none;
-        outline: none;
-        font-size: 16px;
+      width: 100%;
+      border: 1px solid #2C180F;
+      margin-bottom: 10px;
     }
     .custom-form button {
-        padding: 15px 30px;
-        background-color: #000;
-        color: #fff;
-        border: 1px solid #000;
-        cursor: pointer;
-        font-weight: bold;
-        transition: 0.3s;
+      width: 100%;
     }
-    .custom-form button:hover {
-        background-color: #333;
-    }
-    /* Mobile Responsive */
-    @media (max-width: 480px) {
-        .custom-form { display: block; }
-        .custom-form input[type="email"] { width: 100%; border-right: 1px solid #000; margin-bottom: 10px; }
-        .custom-form button { width: 100%; }
-    }
+  }
 </style>
 
 <section class="signup-section">
-    <div class="signup-container">
-        <h2>Stay In Touch</h2>
-        <p>Join our community and be the first to know about new roasts, events, and exclusive offers</p>
+  <div class="signup-container">
+    <h2 style="color: #2C180F; margin-bottom: 10px;">Stay In Touch</h2>
+    <p style="margin-bottom: 20px;">Join our community and be the first to know about new roasts, events, and exclusive offers</p>
+    
+    <div id="form-wrapper">
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
+            method="POST" 
+            target="hidden_iframe" 
+            onsubmit="submitted=true;" 
+            class="custom-form">
         
-        <div class="form-wrapper" id="form-wrapper">
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
-                  method="POST" 
-                  target="hidden_iframe" 
-                  onsubmit="submitted=true;" 
-                  class="custom-form">
-                
-                <input type="email" name="entry.504539600" placeholder="Enter your email address" required>
-                <button type="submit">JOIN</button>
-            </form>
-        </div>
+        <input type="email" name="entry.504539600" placeholder="Enter your email address" required>
+        <button type="submit">JOIN</button>
+      </form>
     </div>
+  </div>
 </section>
     
     <!-- Footer Section -->
