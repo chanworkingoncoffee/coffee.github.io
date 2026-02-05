@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
-    <title>Skoom Coffee</title>
+    <title>Events - Skoom Coffee</title>
     <style>
         :root {
             --blue: #95AAB7;
@@ -22,8 +22,8 @@
         
         body {
             font-family: 'Helvetica Neue', sans-serif;
-            background-color: var(--black);
-            color: var(--cream);
+            background-color: var(--cream);
+            color: var(--brown);
             overflow-x: hidden;
         }
 
@@ -107,106 +107,107 @@
             background-color: var(--cream);
             transition: all 0.3s ease;
         }
-        
-        /* Hero Section with Video */
-        .hero {
-            position: relative;
-            height: 100vh;
+
+        /* Page Content */
+        .page-content {
+            padding-top: 120px;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            color: var(--brown);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--blue);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(149, 170, 183, 0.3);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--blue), var(--brown));
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-        
-        /* Video Background */
-        .video-background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
-            z-index: 1;
-        }
-        
-        /* Subtle overlay for better logo visibility */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .logo-container {
-            margin-bottom: 3rem;
-        }
-        
-        .logo {
-            max-width: 400px;
-            width: 80vw;
-            height: auto;
-            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
-            animation: floatIn 1.8s ease-out;
-        }
-        
-        /* Shop Button */
-        .shop-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background-color: var(--blue);
             color: var(--cream);
-            text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .event-content {
+            padding: 2rem;
+        }
+
+        .event-date {
+            display: inline-block;
+            background-color: var(--orange);
+            color: var(--cream);
+            padding: 0.5rem 1rem;
             font-weight: 700;
-            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 40px rgba(149, 170, 183, 0.4);
-            animation: slideUp 1s ease-out 0.5s backwards;
+            margin-bottom: 1rem;
         }
-        
-        .shop-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: var(--brown);
-            transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
-            transform: translate(-50%, -50%);
-            z-index: -1;
+
+        .event-content h3 {
+            font-size: 1.8rem;
+            color: var(--brown);
+            margin-bottom: 1rem;
         }
-        
-        .shop-button:hover::before {
-            width: 400px;
-            height: 400px;
+
+        .event-content p {
+            color: var(--black);
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
-        
-        .shop-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(149, 170, 183, 0.4);
+
+        .event-time {
+            color: var(--blue);
+            font-weight: 600;
+            margin-top: 1rem;
         }
-        
-        /* Footer Section */
+
+        /* Footer */
         .footer {
-            background-color: var(--cream);
+            background-color: var(--brown);
             color: var(--cream);
             padding: 4rem 2rem 2rem;
             position: relative;
@@ -219,7 +220,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--cream), var(--blue), var(--cream));
+            background: linear-gradient(90deg, var(--orange), var(--blue), var(--orange));
         }
         
         .footer-content {
@@ -242,7 +243,7 @@
         
         .footer-section p,
         .footer-section a {
-            color: var(--brown);
+            color: var(--cream);
             line-height: 1.8;
             text-decoration: none;
             display: block;
@@ -280,39 +281,7 @@
             color: var(--blue);
             font-size: 0.9rem;
         }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .menu-toggle {
@@ -337,15 +306,14 @@
                 left: 0;
             }
 
-            .shop-button {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.2rem;
+            .page-header h1 {
+                font-size: 2.5rem;
             }
-            
-            .logo {
-                max-width: 280px;
+
+            .events-grid {
+                grid-template-columns: 1fr;
             }
-            
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -364,33 +332,58 @@
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section with Video Background -->
-    <section class="hero">
-        <video class="video-background" autoplay muted loop playsinline>
-            <source src="your-movie.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="hero-content">
-            <div class="logo-container">
-                <img src="skoomlogo.svg" alt="Skoom Coffee Logo" class="logo">
-            </div>
-            
-            <a href="https://skoomcoffee.square.site" class="shop-button">
-                Shop our roasts
-            </a>
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="page-header">
+            <h1>Events</h1>
+            <p>Join us for coffee tastings, workshops, and community gatherings at Skoom Coffee</p>
         </div>
-    </section>
-    
-    <!-- Footer Section -->
+
+        <div class="events-grid">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="event-image">☕</div>
+                <div class="event-content">
+                    <span class="event-date">Mar 15, 2026</span>
+                    <h3>Coffee Cupping Workshop</h3>
+                    <p>Learn the art of coffee tasting with our head roaster. Discover flavor profiles and brewing techniques.</p>
+                    <p class="event-time">📍 10:00 AM - 12:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+                <div class="event-image">🎵</div>
+                <div class="event-content">
+                    <span class="event-date">Mar 22, 2026</span>
+                    <h3>Live Jazz Night</h3>
+                    <p>Enjoy smooth jazz with your favorite brew. Local musicians perform every month.</p>
+                    <p class="event-time">📍 7:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+                <div class="event-image">🌱</div>
+                <div class="event-content">
+                    <span class="event-date">Apr 5, 2026</span>
+                    <h3>Sustainability Talk</h3>
+                    <p>Discussion on sustainable coffee sourcing and our partnerships with farmers around the world.</p>
+                    <p class="event-time">📍 2:00 PM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
