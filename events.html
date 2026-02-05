@@ -205,6 +205,46 @@
             margin-top: 1rem;
         }
 
+        /* Email Signup Section */
+        .signup-section {
+            background-color: var(--brown);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .signup-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .signup-section h2 {
+            font-size: 2.5rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .signup-section p {
+            font-size: 1.2rem;
+            color: var(--blue);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .form-wrapper {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-wrapper iframe {
+            width: 100%;
+            min-height: 450px;
+            border: none;
+        }
+
         /* Footer */
         .footer {
             background-color: var(--brown);
@@ -227,7 +267,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
             gap: 3rem;
             margin-bottom: 2rem;
         }
@@ -314,6 +354,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .signup-section h2 {
+                font-size: 2rem;
+            }
+
+            .form-wrapper {
+                padding: 1rem;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -382,6 +430,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Email Signup Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <h2>Stay In Touch</h2>
+            <p>Join our community and be the first to know about new roasts, events, and exclusive offers</p>
+            <div class="form-wrapper">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
