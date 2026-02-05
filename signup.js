@@ -1,5 +1,5 @@
 document.getElementById('signup-placeholder').innerHTML = `
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) { document.getElementById('form-wrapper').innerHTML = '<div style=\'color: #F4F3EB; font-weight: bold; padding: 20px; font-size: 1.5rem;\'>✓ Success! You\\\'ve been added to our list.</div>'; }"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) { document.getElementById('form-wrapper').innerHTML = '<div style=\'color: #F4F3EB; font-weight: bold; padding: 20px; font-size: 1.5rem;\'>✓ Welcome to Skoom!.</div>'; }"></iframe>
 
 <style>
     .signup-section { background-color: #2C180F; padding: 4rem 2rem; text-align: center; }
@@ -9,7 +9,7 @@ document.getElementById('signup-placeholder').innerHTML = `
     .form-wrapper { max-width: 500px; margin: 0 auto; }
     .custom-form-layout { display: flex; justify-content: center; border: 1px solid #F4F3EB; }
     .custom-form-layout input[type="email"] { flex: 1; padding: 15px; border: none; outline: none; background-color: #F4F3EB; color: #2C180F; font-size: 16px; }
-    .custom-form-layout button { padding: 15px 30px; background-color: #95AAB7; color: #F4F3EB; border: none; cursor: pointer; font-weight: bold; }
+    .custom-form-layout button { padding: 15px 30px; background-color: #FE3D06; color: #F4F3EB; border: none; cursor: pointer; font-weight: bold; }
     @media (max-width: 480px) {
         .custom-form-layout { display: block; border: none; }
         .custom-form-layout input { width: 100%; border: 1px solid #F4F3EB; margin-bottom: 10px; }
@@ -19,8 +19,8 @@ document.getElementById('signup-placeholder').innerHTML = `
 
 <section class="signup-section">
     <div class="signup-container">
-        <h2>Stay In Touch</h2>
-        <p>Join our community and be the first to know about new roasts, events, and exclusive offers</p>
+        <h2>Stay in touch</h2>
+        <p>Join our community and be the first to know about our roasts, events, and exclusive offers</p>
         <div class="form-wrapper" id="form-wrapper">
             <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
                   method="POST" target="hidden_iframe" onsubmit="submitted=true;">
