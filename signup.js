@@ -21,7 +21,7 @@ document.getElementById('signup-placeholder').innerHTML = `
     }
 
     /* Success Message Styling */
-    .success-msg { color: #F4F3EB; font-weight: bold; padding: 20px; font-size: 1.5rem; display: none; }
+    .success-msg { color: #F4F3EB; padding: 20px; font-size: 1.5rem; display: none; }
 
     @media (max-width: 480px) {
         .custom-form-layout { display: block; border: none; }
@@ -33,7 +33,7 @@ document.getElementById('signup-placeholder').innerHTML = `
 <section class="signup-section">
     <div class="signup-container">
         <h2>Stay in touch</h2>
-        <p>Join our community and be the first to know about our roasts, events, and exclusive offers</p>
+        <p>Sign up for occasional promos and news. Opt out anytime.</p>
         
         <div id="form-wrapper">
             <form id="skoom-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
@@ -43,7 +43,7 @@ document.getElementById('signup-placeholder').innerHTML = `
                     <button type="submit">JOIN</button>
                 </div>
             </form>
-            <div id="success-message" class="success-msg">✓ Welcome to Skoom!</div>
+            <div id="success-message" class="success-msg">Welcome to Skoom!</div>
         </div>
     </div>
 </section>
