@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <title>Shop - Skoom Coffee</title>
+    <meta http-equiv="refresh" content="0; url=https://skoomcoffee.square.site">
+    <style>
+        :root {
+            --blue: #95AAB7;
+            --brown: #2C180F;
+            --orange: #FE3D06;
+            --cream: #F4F3EB;
+            --black: #2B2B2B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, var(--brown), var(--blue));
+            color: var(--cream);
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .redirect-container {
+            text-align: center;
+            padding: 3rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--cream);
+            opacity: 0.9;
+        }
+
+        .shop-link {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--orange);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(254, 61, 6, 0.4);
+        }
+
+        .shop-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(254, 61, 6, 0.5);
+        }
+
+        .loader {
+            margin: 2rem auto 0;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(244, 243, 235, 0.3);
+            border-top-color: var(--cream);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <img src="skoomlogo.svg" alt="Skoom Coffee" class="logo">
+        <h1>Redirecting to Shop...</h1>
+        <p>Taking you to our online store</p>
+        <a href="https://skoomcoffee.square.site" class="shop-link">Click here if not redirected</a>
+        <div class="loader"></div>
+    </div>
+</body>
+</html>
