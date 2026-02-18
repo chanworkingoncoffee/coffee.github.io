@@ -4,108 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Events - Skoom Coffee</title>
     <style>
-        :root {
-            --blue: #95AAB7;
-            --brown: #2C180F;
-            --orange: #FE3D06;
-            --cream: #F4F3EB;
-            --black: #2B2B2B;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Helvetica Neue', sans-serif;
             background-color: var(--cream);
             color: var(--brown);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(44, 24, 15, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
-        .nav-links a.active {
-            color: var(--blue);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--cream);
-            transition: all 0.3s ease;
         }
 
         /* Page Content */
@@ -205,147 +109,8 @@
             margin-top: 1rem;
         }
 
-        /* Email Signup Section */
-        .signup-section {
-            background-color: var(--brown);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .signup-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .signup-section h2 {
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .signup-section p {
-            font-size: 1.2rem;
-            color: var(--blue);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .form-wrapper {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-wrapper iframe {
-            width: 100%;
-            min-height: 450px;
-            border: none;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--brown);
-            color: var(--cream);
-            padding: 4rem 2rem 2rem;
-            position: relative;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--orange), var(--blue), var(--orange));
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: var(--orange);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .footer-section p,
-        .footer-section a {
-            color: var(--cream);
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: var(--blue);
-            transform: translateX(5px);
-        }
-        
-        .instagram-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            font-weight: 600;
-            color: var(--blue) !important;
-            transition: gap 0.3s ease;
-        }
-        
-        .instagram-link:hover {
-            gap: 1rem;
-        }
-        
-        .instagram-link::before {
-            content: '📷';
-            font-size: 1.2rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(149, 170, 183, 0.3);
-            color: var(--blue);
-            font-size: 0.9rem;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: rgba(44, 24, 15, 0.98);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                gap: 2rem;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
             .page-header h1 {
                 font-size: 2.5rem;
             }
@@ -353,46 +118,18 @@
             .events-grid {
                 grid-template-columns: 1fr;
             }
-
-            .signup-section h2 {
-                font-size: 2rem;
-            }
-
-            .form-wrapper {
-                padding: 1rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <img src="skoomlogo.svg" alt="Skoom Coffee" class="nav-logo">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="events.html" class="active">Events</a></li>
-                <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <li><a href="shop.html">Shop</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from nav.js) -->
+    <div id="nav-placeholder"></div>
 
     <!-- Page Content -->
     <div class="page-content">
         <div class="page-header">
             <h1>Events</h1>
-            <p>Join us for community events</p>
+            <p>Join us for coffee tastings, workshops, and community gatherings at Skoom Coffee</p>
         </div>
 
         <div class="events-grid">
@@ -400,75 +137,46 @@
             <div class="event-card">
                 <div class="event-image">☕</div>
                 <div class="event-content">
-                    <span class="event-date">Mar 28, 2026</span>
-                    <h3>Run Club</h3>
-                    <p>Every Saturday at 9am. 5km run through the city's east end. All levels welcome.</p>
-                    <p class="event-time">9:00 AM</p>
+                    <span class="event-date">Mar 15, 2026</span>
+                    <h3>Coffee Cupping Workshop</h3>
+                    <p>Learn the art of coffee tasting with our head roaster. Discover flavor profiles and brewing techniques.</p>
+                    <p class="event-time">📍 10:00 AM - 12:00 PM</p>
                 </div>
             </div>
 
-            <!-- Event 2 TEMPORARILY HIDDEN - Uncomment when shop is ready to launch 
+            <!-- Event 2 -->
             <div class="event-card">
                 <div class="event-image">🎵</div>
                 <div class="event-content">
                     <span class="event-date">Mar 22, 2026</span>
-                    <h3>Jazz Jazz Night</h3>
+                    <h3>Live Jazz Night</h3>
                     <p>Enjoy smooth jazz with your favorite brew. Local musicians perform every month.</p>
-                    <p class="event-time">7:00 PM - 9:00 PM</p>
+                    <p class="event-time">📍 7:00 PM - 9:00 PM</p>
                 </div>
-            </div>  -->
+            </div>
 
-            <!-- Event 3 EMPORARILY HIDDEN - Uncomment when shop is ready to launch
+            <!-- Event 3 -->
             <div class="event-card">
                 <div class="event-image">🌱</div>
                 <div class="event-content">
                     <span class="event-date">Apr 5, 2026</span>
                     <h3>Sustainability Talk</h3>
                     <p>Discussion on sustainable coffee sourcing and our partnerships with farmers around the world.</p>
-                    <p class="event-time">2:00 PM - 4:00 PM</p>
+                    <p class="event-time">📍 2:00 PM - 4:00 PM</p>
                 </div>
-            </div>  -->
+            </div>
         </div>
     </div>
 
-    <!-- Email Signup Section -->
+    <!-- Email Signup Section (loaded from signup.js) -->
     <div id="signup-placeholder"></div>
-<script src="signup.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Location</h3>
-                <p>197 King St East<br>
-                Toronto, ON M5A 1J5</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Hours</h3>
-                <p>Monday - Sunday: 7am - 7pm</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact</h3>
-               <!--TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <p><a href="tel:+1234567890">(123) 456-7890</a></p> -->
-                <p><a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a></p>
-                <a href="https://instagram.com/skoomcoffee" target="_blank" class="instagram-link">
-                    @skoomcoffee
-                </a>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Skoom Coffee. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Footer (loaded from footer.js) -->
+    <div id="footer-placeholder"></div>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <!-- Load shared components -->
+    <script src="nav.js"></script>
+    <script src="signup.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>

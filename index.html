@@ -4,108 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Skoom Coffee</title>
     <style>
-        :root {
-            --blue: #95AAB7;
-            --brown: #2C180F;
-            --orange: #FE3D06;
-            --cream: #F4F3EB;
-            --black: #2B2B2B;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Helvetica Neue', sans-serif;
             background-color: var(--black);
-            color: var(--cream);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(44, 24, 15, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
-        .nav-links a.active {
-            color: var(--blue);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--cream);
-            transition: all 0.3s ease;
         }
         
         /* Hero Section with Video */
@@ -204,146 +107,31 @@
             box-shadow: 0 15px 50px rgba(149, 170, 183, 0.4);
         }
 
-        /* Email Signup Section */
-        .signup-section {
-            background-color: var(--brown);
-            padding: 4rem 2rem;
+        /* About Section */
+        .about-section {
+            background-color: var(--cream);
+            padding: 6rem 2rem;
             text-align: center;
         }
 
-        .signup-container {
+        .about-container {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .signup-section h2 {
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .signup-section p {
-            font-size: 1.2rem;
-            color: var(--blue);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .form-wrapper {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-wrapper iframe {
-            width: 100%;
-            min-height: 450px;
-            border: none;
-        }
-        
-        /* Footer Section */
-        .footer {
-            background-color: var(--cream);
-            color: var(--cream);
-            padding: 4rem 2rem 2rem;
-            position: relative;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--cream), var(--blue), var(--cream));
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: var(--orange);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .footer-section p,
-        .footer-section a {
+        .about-section h2 {
+            font-size: 3rem;
             color: var(--brown);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: var(--black);
             line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease, transform 0.3s ease;
         }
         
-        .footer-section a:hover {
-            color: var(--blue);
-            transform: translateX(5px);
-        }
-        
-        .instagram-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            font-weight: 600;
-            color: var(--blue) !important;
-            transition: gap 0.3s ease;
-        }
-        
-        .instagram-link:hover {
-            gap: 1rem;
-        }
-       
-        .instagram-link::before { 
-            content: 'IG';
-            font-size: 1.2rem; 
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(149, 170, 183, 0.3);
-            color: var(--blue);
-            font-size: 0.9rem;
-        }
-
-        /* About Section */
-.about-section {
-    background-color: var(--cream);
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-section h2 {
-    font-size: 3rem;
-    color: var(--brown);
-    margin-bottom: 2rem;
-    letter-spacing: 0.05em;
-}
-
-.about-section p {
-    font-size: 1.2rem;
-    color: var(--black);
-    line-height: 1.8;
-}
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -378,28 +166,6 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: rgba(44, 24, 15, 0.98);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                gap: 2rem;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
             .shop-button {
                 padding: 1.2rem 2.5rem;
                 font-size: 1.2rem;
@@ -408,40 +174,12 @@
             .logo {
                 max-width: 280px;
             }
-
-            .signup-section h2 {
-                font-size: 2rem;
-            }
-
-            .form-wrapper {
-                padding: 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <img src="skoomlogo.svg" alt="Skoom Coffee" class="nav-logo">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <li><a href="shop.html">Shop</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from nav.js) -->
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section with Video Background -->
     <section class="hero">
@@ -455,58 +193,31 @@
                 <img src="skoomlogo.svg" alt="Skoom Coffee Logo" class="logo">
             </div>
             
-            <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <a href="https://skoomcoffee.square.site" class="shop-button">
+            <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch
+            <a href="https://skoomcoffee.square.site" class="shop-button">
                 Shop our roasts
-            </a> -->
+            </a>
+            -->
         </div>
     </section>
     
-<!-- About Section -->
-<section class="about-section">
-    <div class="about-container">
-        <h2>About Us</h2>
-        <p>Skoom Coffee is a café born from countless morning coffees shared between us—in the great outdoors, cafés, car rides and more. We're a husband and wife team's love letter to coffee and community. Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee and fresh pastries made to be the coffee you love. We're glad you're here.</p>
-    </div>
-</section>
-    
-    <!-- Email Signup Section -->
-<div id="signup-placeholder"></div>
-<script src="signup.js"></script>
-    
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Location</h3>
-                <p>197 King St East<br>
-                Toronto, ON M5A 1J5</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Hours</h3>
-                <p>Monday - Sunday: 7am - 7pm</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact</h3>
-               <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <p><a href="tel:+1234567890">(123) 456-7890</a></p> -->
-                <p><a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a></p>
-                <a href="https://instagram.com/skoomcoffee" target="_blank" class="instagram-link">
-                    @skoomcoffee
-                </a>
-            </div>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p>Skoom Coffee is a café born from countless morning coffees shared between us—in the great outdoors, cafés, car rides and more. We're a husband and wife team's love letter to coffee and community. Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee and fresh pastries made to be the coffee you love. We're glad you're here.</p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Skoom Coffee. All rights reserved.</p>
-        </div>
-    </footer>
+    </section>
+    
+    <!-- Email Signup Section (loaded from signup.js) -->
+    <div id="signup-placeholder"></div>
+    
+    <!-- Footer (loaded from footer.js) -->
+    <div id="footer-placeholder"></div>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <!-- Load shared components -->
+    <script src="nav.js"></script>
+    <script src="signup.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>
