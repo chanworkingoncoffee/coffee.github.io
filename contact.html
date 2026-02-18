@@ -4,108 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Contact - Skoom Coffee</title>
     <style>
-        :root {
-            --blue: #95AAB7;
-            --brown: #2C180F;
-            --orange: #FE3D06;
-            --cream: #F4F3EB;
-            --black: #2B2B2B;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Helvetica Neue', sans-serif;
             background-color: var(--cream);
             color: var(--brown);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(44, 24, 15, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
-        .nav-links a.active {
-            color: var(--blue);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--cream);
-            transition: all 0.3s ease;
         }
 
         /* Page Content */
@@ -205,15 +109,9 @@
             text-align: center;
         }
 
-        .map-placeholder {
+        .map-section iframe {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, var(--blue), var(--brown));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cream);
-            font-size: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
@@ -247,147 +145,8 @@
             transform: translateY(-2px);
         }
 
-        /* Email Signup Section */
-        .signup-section {
-            background-color: var(--brown);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .signup-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .signup-section h2 {
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .signup-section p {
-            font-size: 1.2rem;
-            color: var(--blue);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .form-wrapper {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-wrapper iframe {
-            width: 100%;
-            min-height: 450px;
-            border: none;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--brown);
-            color: var(--cream);
-            padding: 4rem 2rem 2rem;
-            position: relative;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--orange), var(--blue), var(--orange));
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: var(--orange);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        
-        .footer-section p,
-        .footer-section a {
-            color: var(--cream);
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .footer-section a:hover {
-            color: var(--blue);
-            transform: translateX(5px);
-        }
-        
-        .instagram-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            font-weight: 600;
-            color: var(--blue) !important;
-            transition: gap 0.3s ease;
-        }
-        
-        .instagram-link:hover {
-            gap: 1rem;
-        }
-        
-        .instagram-link::before {
-            content: '📷';
-            font-size: 1.2rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(149, 170, 183, 0.3);
-            color: var(--blue);
-            font-size: 0.9rem;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: rgba(44, 24, 15, 0.98);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                gap: 2rem;
-                transition: left 0.3s ease;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
             .page-header h1 {
                 font-size: 2.5rem;
             }
@@ -395,40 +154,12 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-
-            .signup-section h2 {
-                font-size: 2rem;
-            }
-
-            .form-wrapper {
-                padding: 1rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <img src="skoomlogo.svg" alt="Skoom Coffee" class="nav-logo">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <li><a href="shop.html">Shop</a></li> -->
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from nav.js) -->
+    <div id="nav-placeholder"></div>
 
     <!-- Page Content -->
     <div class="page-content">
@@ -445,12 +176,14 @@
                 <p>197 King St East<br>Toronto, ON M5A 1J5</p>
             </div>
 
-            <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch <div class="contact-card">
+            <div class="contact-card">
                 <div class="contact-icon">📞</div>
                 <h3>Call Us</h3>
+                <!-- TEMPORARILY HIDDEN - Uncomment when ready to launch
                 <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                -->
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--blue);">Monday - Sunday<br>7am - 7pm</p>
-            </div> -->
+            </div>
 
             <div class="contact-card">
                 <div class="contact-icon">✉️</div>
@@ -466,54 +199,26 @@
         </div>
 
         <!-- Map Section -->
-<div class="map-section">
-    <h2>Find Us</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8786703530973!2d-79.3699522!3d43.65069259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb3088bf15bf%3A0xb0b60392fa10ffd8!2s197%20King%20St%20E%2C%20Toronto%2C%20ON%20M5A%201J5!5e0!3m2!1sen!2sca!4v1770395858028!5m2!1sen!2sca" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <div class="map-info">
-        <p><strong>197 King St East, Toronto, ON M5A 1J5</strong></p>
-        <p>Located in the heart of downtown Toronto, across from George Brown College and just steps from St. Lawrence Market</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=197+King+St+East+Toronto+ON+M5A+1J5" target="_blank" class="directions-button">Get Directions</a>
+        <div class="map-section">
+            <h2>Find Us</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8786703530973!2d-79.3699522!3d43.65069259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb3088bf15bf%3A0xb0b60392fa10ffd8!2s197%20King%20St%20E%2C%20Toronto%2C%20ON%20M5A%201J5!5e0!3m2!1sen!2sca!4v1770395858028!5m2!1sen!2sca" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-info">
+                <p><strong>197 King St East, Toronto, ON M5A 1J5</strong></p>
+                <p>Located in the heart of downtown Toronto, across from George Brown College and just steps from St. Lawrence Market</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=197+King+St+East+Toronto+ON+M5A+1J5" target="_blank" class="directions-button">Get Directions</a>
+            </div>
+        </div>
     </div>
-</div>
-        
-    <!-- Email Signup Section -->
+
+    <!-- Email Signup Section (loaded from signup.js) -->
     <div id="signup-placeholder"></div>
-<script src="signup.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Location</h3>
-                <p>197 King St East<br>
-                Toronto, ON M5A 1J5</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Hours</h3>
-                <p>Monday - Sunday: 7am - 7pm</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><a href="tel:+1234567890">(123) 456-7890</a></p>
-                <p><a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a></p>
-                <a href="https://instagram.com/skoomcoffee" target="_blank" class="instagram-link">
-                    @skoomcoffee
-                </a>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Skoom Coffee. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Footer (loaded from footer.js) -->
+    <div id="footer-placeholder"></div>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <!-- Load shared components -->
+    <script src="nav.js"></script>
+    <script src="signup.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>
