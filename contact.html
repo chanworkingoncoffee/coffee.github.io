@@ -14,105 +14,90 @@
 
         /* Page Content */
         .page-content {
-            padding-top: 120px;
+            padding-top: 140px;
             min-height: 100vh;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: 2rem;
             padding-right: 2rem;
-            padding-bottom: 4rem;
+            padding-bottom: 6rem;
         }
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .page-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brown);
+            opacity: 0.5;
+            margin-bottom: 2rem;
         }
 
         .page-header h1 {
-            font-size: 3.5rem;
+            font-size: clamp(3rem, 10vw, 6rem);
             color: var(--brown);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            color: var(--blue);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            margin-bottom: 4rem;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            line-height: 1;
         }
 
         /* Contact Grid */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            gap: 5rem 4rem;
+            margin-bottom: 6rem;
         }
 
-        .contact-card {
-            background-color: white;
-            padding: 3rem;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(149, 170, 183, 0.3);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-card h3 {
-            font-size: 1.5rem;
-            color: var(--orange);
-            margin-bottom: 1rem;
+        .contact-item h3 {
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
+            color: var(--brown);
+            opacity: 0.5;
+            margin-bottom: 1rem;
         }
 
-        .contact-card p {
+        .contact-item p {
             color: var(--brown);
             line-height: 1.8;
             font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-card a {
-            color: var(--blue);
+        .contact-item a {
+            color: var(--brown);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s ease;
         }
 
-        .contact-card a:hover {
-            color: var(--orange);
+        .contact-item a:hover {
+            border-bottom: 1px solid var(--brown);
         }
 
         /* Map Section */
         .map-section {
-            margin-top: 4rem;
-            background-color: white;
-            padding: 3rem;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            margin-top: 6rem;
         }
 
         .map-section h2 {
-            font-size: 2.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             color: var(--brown);
-            margin-bottom: 1.5rem;
-            text-align: center;
+            opacity: 0.5;
+            margin-bottom: 2rem;
         }
 
         .map-section iframe {
             width: 100%;
-            height: 400px;
-            margin-bottom: 1.5rem;
+            height: 500px;
+            margin-bottom: 2rem;
+            filter: grayscale(20%);
         }
 
         .map-info {
@@ -121,38 +106,40 @@
         }
 
         .map-info p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 1rem;
+            opacity: 0.7;
         }
 
-        .directions-button {
+        .directions-link {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--blue);
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 10px;
-            transition: all 0.3s ease;
             margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            border: 1px solid var(--brown);
+            transition: all 0.3s ease;
         }
 
-        .directions-button:hover {
-            background-color: var(--orange);
-            transform: translateY(-2px);
+        .directions-link:hover {
+            background-color: var(--brown);
+            color: var(--cream);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .map-section iframe {
+                height: 350px;
             }
         }
     </style>
@@ -163,62 +150,46 @@
 
     <!-- Page Content -->
     <div class="page-content">
+        <p class="page-label">Contact</p>
         <div class="page-header">
             <h1>Get In Touch</h1>
-            <p>Visit us, call us, or follow us on social media. We'd love to hear from you!</p>
         </div>
 
-        <!-- Contact Cards -->
+        <!-- Contact Grid -->
         <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>Visit Us</h3>
+            <div class="contact-item">
+                <h3>Visit</h3>
                 <p>197 King St East<br>Toronto, ON M5A 1J5</p>
+                <p style="margin-top: 1rem; opacity: 0.7; font-size: 1rem;">Mon–Sun 7am–7pm</p>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Call Us</h3>
-                <!-- TEMPORARILY HIDDEN - Uncomment when ready to launch
-                <p><a href="tel:+1234567890">(123) 456-7890</a></p>
-                -->
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--blue);">Monday - Sunday<br>7am - 7pm</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">✉️</div>
-                <h3>Email Us</h3>
+            <div class="contact-item">
+                <h3>Email</h3>
                 <p><a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a></p>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">📷</div>
-                <h3>Follow Us</h3>
+            <div class="contact-item">
+                <h3>Instagram</h3>
                 <p><a href="https://instagram.com/skoomcoffee" target="_blank">@skoomcoffee</a></p>
             </div>
         </div>
 
         <!-- Map Section -->
         <div class="map-section">
-            <h2>Find Us</h2>
+            <h2>Location</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8786703530973!2d-79.3699522!3d43.65069259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb3088bf15bf%3A0xb0b60392fa10ffd8!2s197%20King%20St%20E%2C%20Toronto%2C%20ON%20M5A%201J5!5e0!3m2!1sen!2sca!4v1770395858028!5m2!1sen!2sca" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="map-info">
-                <p><strong>197 King St East, Toronto, ON M5A 1J5</strong></p>
-                <p>Located in the heart of downtown Toronto, across from George Brown College and just steps from St. Lawrence Market</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=197+King+St+East+Toronto+ON+M5A+1J5" target="_blank" class="directions-button">Get Directions</a>
+                <p>Located in a heritage building in downtown Toronto,<br>across from George Brown College and steps from St. Lawrence Market</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=197+King+St+East+Toronto+ON+M5A+1J5" target="_blank" class="directions-link">Get Directions</a>
             </div>
         </div>
     </div>
-
-    <!-- Email Signup Section (loaded from signup.js) -->
-    <div id="signup-placeholder"></div>
 
     <!-- Footer (loaded from footer.js) -->
     <div id="footer-placeholder"></div>
 
     <!-- Load shared components -->
     <script src="nav.js"></script>
-    <script src="signup.js"></script>
     <script src="footer.js"></script>
 </body>
 </html>

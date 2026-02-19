@@ -14,109 +14,125 @@
 
         /* Page Content */
         .page-content {
-            padding-top: 120px;
+            padding-top: 140px;
             min-height: 100vh;
             max-width: 1200px;
             margin: 0 auto;
             padding-left: 2rem;
             padding-right: 2rem;
-            padding-bottom: 4rem;
+            padding-bottom: 6rem;
         }
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .page-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brown);
+            opacity: 0.5;
+            margin-bottom: 2rem;
         }
 
         .page-header h1 {
-            font-size: 3.5rem;
+            font-size: clamp(3rem, 10vw, 6rem);
             color: var(--brown);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            line-height: 1;
         }
 
-        .page-header p {
+        .page-intro {
             font-size: 1.2rem;
-            color: var(--blue);
+            line-height: 1.8;
+            color: var(--brown);
+            opacity: 0.7;
             max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            margin-bottom: 6rem;
         }
 
-        /* Events Grid */
-        .events-grid {
+        /* Events List - Editorial Style */
+        .events-list {
+            border-top: 1px solid rgba(144, 111, 74, 0.2);
+        }
+
+        .event-item {
+            border-bottom: 1px solid rgba(144, 111, 74, 0.2);
+            padding: 3rem 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: 200px 1fr;
+            gap: 4rem;
+            transition: opacity 0.3s ease;
         }
 
-        .event-card {
-            background-color: white;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(149, 170, 183, 0.3);
-        }
-
-        .event-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, var(--blue), var(--brown));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cream);
-            font-size: 3rem;
-        }
-
-        .event-content {
-            padding: 2rem;
+        .event-item:hover {
+            opacity: 0.7;
         }
 
         .event-date {
-            display: inline-block;
-            background-color: var(--orange);
-            color: var(--cream);
-            padding: 0.5rem 1rem;
+            font-size: 2rem;
             font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+            color: var(--brown);
+            line-height: 1.2;
         }
 
-        .event-content h3 {
+        .event-month {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-details h3 {
             font-size: 1.8rem;
+            font-weight: 700;
             color: var(--brown);
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
-        .event-content p {
-            color: var(--black);
-            line-height: 1.7;
+        .event-details p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--brown);
+            opacity: 0.8;
             margin-bottom: 1rem;
         }
 
         .event-time {
-            color: var(--blue);
-            font-weight: 600;
-            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--brown);
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 6rem 2rem;
+            opacity: 0.5;
+        }
+
+        .no-events p {
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
+            .event-item {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 0;
             }
 
-            .events-grid {
-                grid-template-columns: 1fr;
+            .event-date {
+                font-size: 1.5rem;
+            }
+
+            .event-details h3 {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -127,56 +143,62 @@
 
     <!-- Page Content -->
     <div class="page-content">
+        <p class="page-label">Events</p>
         <div class="page-header">
-            <h1>Events</h1>
-            <p>Join us for coffee tastings, workshops, and community gatherings at Skoom Coffee</p>
+            <h1>What's On</h1>
         </div>
+        <p class="page-intro">Join us for coffee tastings, workshops, and community gatherings. Check back soon for upcoming events.</p>
 
-        <div class="events-grid">
-            <!-- Event 1 
-            <div class="event-card">
-                <div class="event-image">☕</div>
-                <div class="event-content">
-                    <span class="event-date">Mar 15, 2026</span>
+        <div class="events-list">
+            <!-- Uncomment and edit when you have events
+            <div class="event-item">
+                <div class="event-date">
+                    <p class="event-month">March</p>
+                    <p>15</p>
+                </div>
+                <div class="event-details">
                     <h3>Coffee Cupping Workshop</h3>
-                    <p>Learn the art of coffee tasting with our head roaster. Discover flavor profiles and brewing techniques.</p>
-                    <p class="event-time">📍 10:00 AM - 12:00 PM</p>
+                    <p>Learn the art of coffee tasting with our head roaster. Discover flavor profiles and brewing techniques in this hands-on session.</p>
+                    <p class="event-time">10:00 AM – 12:00 PM</p>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- Event 2 
-            <div class="event-card">
-                <div class="event-image">🎵</div>
-                <div class="event-content">
-                    <span class="event-date">Mar 22, 2026</span>
+            <div class="event-item">
+                <div class="event-date">
+                    <p class="event-month">March</p>
+                    <p>22</p>
+                </div>
+                <div class="event-details">
                     <h3>Live Jazz Night</h3>
-                    <p>Enjoy smooth jazz with your favorite brew. Local musicians perform every month.</p>
-                    <p class="event-time">📍 7:00 PM - 9:00 PM</p>
+                    <p>Enjoy smooth jazz with your favorite brew. Local musicians perform monthly in our heritage space.</p>
+                    <p class="event-time">7:00 PM – 9:00 PM</p>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- Event 3 
-            <div class="event-card">
-                <div class="event-image">🌱</div>
-                <div class="event-content">
-                    <span class="event-date">Apr 5, 2026</span>
+            <div class="event-item">
+                <div class="event-date">
+                    <p class="event-month">April</p>
+                    <p>05</p>
+                </div>
+                <div class="event-details">
                     <h3>Sustainability Talk</h3>
                     <p>Discussion on sustainable coffee sourcing and our partnerships with farmers around the world.</p>
-                    <p class="event-time">📍 2:00 PM - 4:00 PM</p>
+                    <p class="event-time">2:00 PM – 4:00 PM</p>
                 </div>
-            </div>  -->
+            </div>
+            -->
+
+            <div class="no-events">
+                <p>No upcoming events at the moment.<br>Follow us on Instagram for announcements.</p>
+            </div>
         </div>
     </div>
-
-    <!-- Email Signup Section (loaded from signup.js) -->
-    <div id="signup-placeholder"></div>
 
     <!-- Footer (loaded from footer.js) -->
     <div id="footer-placeholder"></div>
 
     <!-- Load shared components -->
     <script src="nav.js"></script>
-    <script src="signup.js"></script>
     <script src="footer.js"></script>
 </body>
 </html>

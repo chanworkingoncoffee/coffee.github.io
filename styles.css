@@ -29,36 +29,45 @@ nav {
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1.5rem 2rem;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.nav-logo-link {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo-link:hover {
+    opacity: 0.7;
+}
+
 .nav-logo {
     height: 40px;
     width: auto;
+    cursor: pointer;
 }
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     list-style: none;
 }
 
 .nav-links a {
     color: var(--cream);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-size: 0.75rem;
+    transition: opacity 0.3s ease;
     position: relative;
 }
 
@@ -68,8 +77,8 @@ nav {
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 2px;
-    background-color: var(--blue);
+    height: 1px;
+    background-color: var(--cream);
     transition: width 0.3s ease;
 }
 
@@ -78,12 +87,9 @@ nav {
     width: 100%;
 }
 
-.nav-links a:hover {
-    color: var(--blue);
-}
-
+.nav-links a:hover,
 .nav-links a.active {
-    color: var(--blue);
+    opacity: 1;
 }
 
 /* Mobile Menu Toggle */
@@ -96,87 +102,12 @@ nav {
 
 .menu-toggle span {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: var(--cream);
     transition: all 0.3s ease;
 }
 
-/* Footer Section */
-.footer {
-    background-color: var(--cream);
-    color: var(--cream);
-    padding: 4rem 2rem 2rem;
-    position: relative;
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--cream), var(--blue), var(--cream));
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-    color: var(--orange);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.footer-section p,
-.footer-section a {
-    color: var(--brown);
-    line-height: 1.8;
-    text-decoration: none;
-    display: block;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: var(--blue);
-    transform: translateX(5px);
-}
-
-.instagram-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
-    color: var(--blue) !important;
-    transition: gap 0.3s ease;
-}
-
-.instagram-link:hover {
-    gap: 1rem;
-}
-
-.instagram-link::before { 
-    content: 'IG';
-    font-size: 1.2rem; 
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(149, 170, 183, 0.3);
-    color: var(--blue);
-    font-size: 0.9rem;
-}
+/* Footer removed from here - now in footer.js */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -200,10 +131,5 @@ nav {
 
     .nav-links.active {
         left: 0;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
     }
 }

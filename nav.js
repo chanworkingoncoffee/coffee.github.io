@@ -4,7 +4,9 @@ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.getElementById('nav-placeholder').innerHTML = `
 <nav>
     <div class="nav-container">
-        <img src="skoomlogo.svg" alt="Skoom Coffee" class="nav-logo">
+        <a href="index.html" class="nav-logo-link">
+            <img src="skoomlogo.svg" alt="Skoom Coffee" class="nav-logo">
+        </a>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>

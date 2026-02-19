@@ -10,6 +10,20 @@
         body {
             background-color: var(--black);
         }
+
+        /* Echinacea Decoration - Fixed with Parallax */
+        .echinacea-decoration {
+            position: fixed;
+            bottom: -10%;
+            right: 0;
+            width: 400px;
+            height: auto;
+            opacity: 0.4;
+            z-index: 10;
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+            mix-blend-mode: multiply;
+        }
         
         /* Hero Section with Video */
         .hero {
@@ -19,6 +33,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 0 4rem;
         }
         
         /* Video Background */
@@ -34,7 +49,7 @@
             z-index: 1;
         }
         
-        /* Subtle overlay for better logo visibility */
+        /* Darker overlay for better text visibility */
         .hero::before {
             content: '';
             position: absolute;
@@ -42,94 +57,88 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 2;
         }
         
         .hero-content {
             position: relative;
             z-index: 3;
-            text-align: center;
+            max-width: 1400px;
+            width: 100%;
+            padding: 0 2rem;
             animation: fadeIn 1.5s ease-out;
         }
         
-        .logo-container {
-            margin-bottom: 3rem;
-        }
-        
-        .logo {
-            max-width: 400px;
-            width: 80vw;
-            height: auto;
-            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
-            animation: floatIn 1.8s ease-out;
-        }
-        
-        /* Shop Button */
-        .shop-button {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background-color: var(--blue);
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 1.5rem;
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 12rem);
             font-weight: 700;
-            letter-spacing: 0.1em;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            color: var(--cream);
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 40px rgba(149, 170, 183, 0.4);
-            animation: slideUp 1s ease-out 0.5s backwards;
+            margin: 0;
         }
         
-        .shop-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: var(--brown);
-            transition: width 0.6s ease, height 0.6s ease, top 0.6s ease, left 0.6s ease;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-        
-        .shop-button:hover::before {
-            width: 400px;
-            height: 400px;
-        }
-        
-        .shop-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(149, 170, 183, 0.4);
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream);
+            opacity: 0.7;
+            margin-top: 2rem;
         }
 
-        /* About Section */
+        /* About Section - Editorial Style */
         .about-section {
             background-color: var(--cream);
-            padding: 6rem 2rem;
-            text-align: center;
+            padding: 8rem 2rem;
         }
 
         .about-container {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 600px;
+            gap: 6rem;
+            align-items: start;
         }
 
-        .about-section h2 {
-            font-size: 3rem;
+        .about-left {
+            /* Empty space on left */
+        }
+
+        .about-right {
+            text-align: justify;
+        }
+
+        .about-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             color: var(--brown);
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
+            opacity: 0.5;
+            margin-bottom: 3rem;
+            text-align: left;
         }
 
-        .about-section p {
-            font-size: 1.2rem;
-            color: var(--black);
+        .about-right h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--brown);
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .about-right p {
+            font-size: 1.1rem;
             line-height: 1.8;
+            color: var(--black);
+            margin-bottom: 1.5rem;
         }
         
         /* Animations */
@@ -139,17 +148,6 @@
             }
             to {
                 opacity: 1;
-            }
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
         
@@ -166,13 +164,36 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .shop-button {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.2rem;
+            .echinacea-decoration {
+                width: 250px;
+                right: 0;
+                bottom: -5%;
+                opacity: 0.3;
             }
-            
-            .logo {
-                max-width: 280px;
+
+            .hero {
+                padding: 0 2rem;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .about-section {
+                padding: 5rem 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .about-left {
+                display: none;
             }
         }
     </style>
@@ -180,6 +201,9 @@
 <body>
     <!-- Navigation (loaded from nav.js) -->
     <div id="nav-placeholder"></div>
+
+    <!-- Echinacea Decoration -->
+    <img src="echinacea.svg" alt="" class="echinacea-decoration" id="echinacea">
 
     <!-- Hero Section with Video Background -->
     <section class="hero">
@@ -189,35 +213,43 @@
         </video>
         
         <div class="hero-content">
-            <div class="logo-container">
-                <img src="skoomlogo.svg" alt="Skoom Coffee Logo" class="logo">
-            </div>
-            
-            <!-- TEMPORARILY HIDDEN - Uncomment when shop is ready to launch
-            <a href="https://skoomcoffee.square.site" class="shop-button">
-                Shop our roasts
-            </a>
-            -->
+            <h1 class="hero-title">Opening<br>Spring<br>2026</h1>
+            <p class="hero-subtitle">197 King St East, Toronto</p>
         </div>
     </section>
     
     <!-- About Section -->
     <section class="about-section">
         <div class="about-container">
-            <h2>About Us</h2>
-            <p>Skoom Coffee is a café born from countless morning coffees shared between us—in the great outdoors, cafés, car rides and more. We're a husband and wife team's love letter to coffee and community. Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee and fresh pastries made to be the coffee you love. We're glad you're here.</p>
+            <div class="about-left">
+                <!-- Empty space for asymmetric layout -->
+            </div>
+            <div class="about-right">
+                <p class="about-label">About</p>
+                <h2>Coffee. Community. King Street.</h2>
+                <p>Skoom Coffee is a café born from countless morning coffees shared between us—in the great outdoors, cafés, car rides and more. We're a husband and wife team's love letter to coffee and community.</p>
+                <p>Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee and fresh pastries.</p>
+                <p>Made to be the coffee you love. We're glad you're here.</p>
+            </div>
         </div>
     </section>
     
-    <!-- Email Signup Section (loaded from signup.js) -->
-    <div id="signup-placeholder"></div>
-    
-    <!-- Footer (loaded from footer.js) -->
+    <!-- Footer with Newsletter (loaded from footer.js) -->
     <div id="footer-placeholder"></div>
 
     <!-- Load shared components -->
     <script src="nav.js"></script>
-    <script src="signup.js"></script>
     <script src="footer.js"></script>
+
+    <!-- Parallax Effect for Echinacea -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const echinacea = document.getElementById('echinacea');
+            const scrolled = window.pageYOffset;
+            const parallaxSpeed = 0.3; // Slower movement = more subtle
+            
+            echinacea.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        });
+    </script>
 </body>
 </html>
