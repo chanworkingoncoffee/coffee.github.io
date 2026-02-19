@@ -1,0 +1,37 @@
+SKOOM COFFEE - COLOR CHANGE GUIDE
+==================================
+
+To change colors across the ENTIRE site, edit these values in styles.css:
+
+:root {
+    --blue: #95AAB7;           /* Blue accents, links, hover states */
+    --brown: #906F4A;          /* MAIN BROWN - Navigation, footer text, headings */
+    --orange: #FE3D06;         /* Call-to-action buttons, accents */
+    --cream: #F4F3EB;          /* Backgrounds, light text */
+    --black: #2B2B2B;          /* Dark text, backgrounds */
+    
+    /* These are calculated from --brown: */
+    --brown-transparent: rgba(144, 111, 74, 0.95);        /* Navigation background */
+    --brown-transparent-mobile: rgba(144, 111, 74, 0.98); /* Mobile nav background */
+}
+
+HOW TO CHANGE BROWN:
+====================
+1. Open styles.css
+2. Change --brown: #906F4A to your new color
+3. Convert your hex to RGB (use a converter online)
+4. Update --brown-transparent: rgba(YOUR_R, YOUR_G, YOUR_B, 0.95)
+5. Update --brown-transparent-mobile: rgba(YOUR_R, YOUR_G, YOUR_B, 0.98)
+6. Upload styles.css to GitHub
+
+THAT'S IT! All pages update automatically:
+✅ index.html
+✅ events.html  
+✅ contact.html
+✅ shop.html
+✅ listen.html
+✅ signup.js (email form)
+✅ nav.js (navigation)
+✅ footer.js (footer)
+
+NO OTHER FILES NEED TO BE EDITED!

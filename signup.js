@@ -2,30 +2,30 @@ document.getElementById('signup-placeholder').innerHTML = `
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 <style>
-    .signup-section { background-color: #2C180F; padding: 4rem 2rem; text-align: center; }
+    .signup-section { background-color: var(--brown); padding: 4rem 2rem; text-align: center; }
     .signup-container { max-width: 800px; margin: 0 auto; }
-    .signup-section h2 { font-size: 2.5rem; color: #F4F3EB; margin-bottom: 1rem; letter-spacing: 0.05em; }
-    .signup-section p { font-size: 1.2rem; color: #95AAB7; margin-bottom: 2rem; line-height: 1.6; }
+    .signup-section h2 { font-size: 2.5rem; color: var(--cream); margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .signup-section p { font-size: 1.2rem; color: var(--blue); margin-bottom: 2rem; line-height: 1.6; }
     
     #form-wrapper { max-width: 500px; margin: 0 auto; background: transparent; }
 
-    .custom-form-layout { display: flex; justify-content: center; border: 1px solid #F4F3EB; }
+    .custom-form-layout { display: flex; justify-content: center; border: 1px solid var(--cream); }
     .custom-form-layout input[type="email"] { 
         flex: 1; padding: 15px; border: none; outline: none; 
-        background-color: #F4F3EB; color: #2C180F; font-size: 16px; 
+        background-color: var(--cream); color: var(--brown); font-size: 16px; 
     }
     
     .custom-form-layout button { 
-        padding: 15px 30px; background-color: #FE3D06; 
-        color: #F4F3EB; border: none; cursor: pointer; font-weight: bold; 
+        padding: 15px 30px; background-color: var(--orange); 
+        color: var(--cream); border: none; cursor: pointer; font-weight: bold; 
     }
 
     /* Success Message Styling */
-    .success-msg { color: #F4F3EB; padding: 20px; font-size: 1.5rem; display: none; }
+    .success-msg { color: var(--cream); padding: 20px; font-size: 1.5rem; display: none; }
 
     @media (max-width: 480px) {
         .custom-form-layout { display: block; border: none; }
-        .custom-form-layout input { width: 100%; border: 1px solid #F4F3EB; margin-bottom: 10px; }
+        .custom-form-layout input { width: 100%; border: 1px solid var(--cream); margin-bottom: 10px; }
         .custom-form-layout button { width: 100%; }
     }
 </style>

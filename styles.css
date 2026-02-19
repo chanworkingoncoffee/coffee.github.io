@@ -4,6 +4,8 @@
     --orange: #FE3D06;
     --cream: #F4F3EB;
     --black: #2B2B2B;
+    --brown-transparent: rgba(144, 111, 74, 0.95);
+    --brown-transparent-mobile: rgba(144, 111, 74, 0.98);
 }
 
 * {
@@ -23,7 +25,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(44, 24, 15, 0.95);
+    background-color: var(--brown-transparent);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1.5rem 2rem;
@@ -188,7 +190,7 @@ nav {
         left: -100%;
         width: 100%;
         height: calc(100vh - 80px);
-        background-color: rgba(44, 24, 15, 0.98);
+        background-color: var(--brown-transparent-mobile);
         flex-direction: column;
         align-items: center;
         padding-top: 2rem;
