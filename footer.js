@@ -19,7 +19,7 @@ document.getElementById('footer-placeholder').innerHTML = `
         
         <div class="footer-section footer-newsletter">
             <h3>Newsletter</h3>
-            <form id="footer-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdC929LWcphIc3nx-m2R0jdIDs-Jsfdg7LWAAaIQXXcbgkFjw/formResponse" 
+            <form id="footer-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdaIB4B34cqnDjwZqWtODT7iR_0eA_0IkBsnBTMz-R5b8mimQ/formResponse" 
                   method="POST" target="hidden_iframe_footer">
                 <div class="newsletter-input">
                     <input type="email" name="entry.504539600" placeholder="Your email" required>
