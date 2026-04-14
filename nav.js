@@ -1,3 +1,5 @@
+document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="icon" type="image/png" href="favicon.png">');
+
 // Get current page filename to set active nav link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
