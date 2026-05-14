@@ -74,10 +74,12 @@
         <div class="newsletter-block">
           <h4>Newsletter</h4>
           <p class="helper">Once a month never more — learn about new beans, events and more.</p>
-        <form class="newsletter" action="https://docs.google.com/forms/d/e/1FAIpQLSdaIB4B34cqnDjwZqWtODT7iR_0eA_0IkBsnBTMz-R5b8mimQ/formResponse" method="POST" target="hidden_iframe_newsletter">
-          <input type="email" name="entry.504539600" placeholder="Email address" required aria-label="Email address">
-          <button type="submit" aria-label="Subscribe">→</button>
-        </form>
+  <form class="newsletter" action="https://docs.google.com/forms/d/e/1FAIpQLSdaIB4B34cqnDjwZqWtODT7iR_0eA_0IkBsnBTMz-R5b8mimQ/formResponse" method="POST" target="hidden_iframe_newsletter" onsubmit="document.getElementById('newsletter-success').style.display='block'">
+  <input type="email" name="entry.504539600" placeholder="Email address" required aria-label="Email address">
+  <button type="submit" aria-label="Subscribe">→</button>
+</form>
+<iframe name="hidden_iframe_newsletter" style="display:none;"></iframe>
+<p id="newsletter-success" style="display:none; font-size:12px; margin-top:8px;">Subscribed — see you soon.</p>
 <iframe name="hidden_iframe_newsletter" style="display:none;"></iframe>
         </div>
       </div>
