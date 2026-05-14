@@ -1,256 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Skoom Coffee</title>
-    <style>
-        body {
-            background-color: var(--black);
-        }
-
-        /* Echinacea Decoration - Fixed with Parallax */
-        .echinacea-decoration {
-            position: fixed;
-            bottom: -2%;
-            right: 0;
-            width: 400px;
-            height: auto;
-            opacity: 0.4;
-            z-index: 10;
-            pointer-events: none;
-            transition: transform 0.1s ease-out;
-            mix-blend-mode: multiply;
-        }
-        
-        /* Hero Section with Video */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 0 4rem;
-        }
-        
-        /* Video Background */
-        .video-background {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
-            z-index: 1;
-        }
-        
-        /* Darker overlay for better text visibility */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 2;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 1400px;
-            width: 100%;
-            padding: 0 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .hero-title {
-            font-size: clamp(4rem, 15vw, 12rem);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -0.03em;
-            color: var(--cream);
-            text-transform: uppercase;
-            margin: 0;
-            padding-top: 6rem;
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--cream);
-            opacity: 0.7;
-            margin-top: 2rem;
-        }
-
-        /* About Section - Editorial Style */
-        .about-section {
-            background-color: var(--cream);
-            padding: 8rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 600px;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .about-left {
-            /* Empty space on left */
-        }
-
-        .about-right {
-            text-align: justify;
-        }
-
-        .about-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--brown);
-            opacity: 0.5;
-            margin-bottom: 3rem;
-            text-align: left;
-        }
-
-        .about-right h2 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            color: var(--brown);
-            margin-bottom: 3rem;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-            line-height: 1.1;
-            text-align: left;
-        }
-
-        .about-right p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .echinacea-decoration {
-                width: 250px;
-                right: 0;
-                bottom: -5%;
-                opacity: 0.3;
-            }
-
-            .hero {
-                padding: 0 2rem;
-            }
-
-            .hero-title {
-                font-size: 3.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.85rem;
-            }
-
-            .about-section {
-                padding: 5rem 2rem;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .about-left {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skoom — Coffee, Toronto</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation (loaded from nav.js) -->
-    <div id="nav-placeholder"></div>
+  <div class="page">
+    <div class="viewport">
+    <header class="nav">
+      <a href="index.html" class="logo" aria-label="Skoom Coffee home">Skoom<span class="reg">&reg;</span>Coffee</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-    <!-- Echinacea Decoration -->
-    <img src="echinacea.svg" alt="" class="echinacea-decoration" id="echinacea">
-
-    <!-- Hero Section with Video Background -->
-    <section class="hero">
-        <video class="video-background" autoplay muted loop playsinline>
-            <source src="your-movie.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="hero-content">
-            <h1 class="hero-title">Opening<br>Spring<br>2026</h1>
-            <p class="hero-subtitle">197 King St East, Toronto</p>
+    <main class="home-main">
+      <section class="home-statement">
+        <p class="eyebrow">197 King St East, Toronto</p>
+        <div class="home-statement-body">
+          <h1>Slow mornings,<br>better <em>days.</em></h1>
+          <div class="home-copy">
+            <p>Born from the love of outdoors, good company, and local craft. Skoom is your neighbourhood third space, shaped by great coffee and Canadian makers. Freshly roasted in Toronto, always quality.</p>
+            <p>Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee, sandwiches, and fresh pastries.</p>
+            <p>Made to be the coffee you love. We're glad you're here.</p>
+          </div>
         </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-left">
-                <!-- Empty space for asymmetric layout -->
-            </div>
-            <div class="about-right">
-                <p class="about-label">About</p>
-                <h2>About</h2>
-                <p>Born from the love of outdoors, good company, and local craft. Skoom is your neighbourhood third space, shaped by great coffee and Canadian makers. Freshly roasted in Toronto, always quality.</p>
-                <p>Nestled in a heritage building in downtown Toronto, we're here to provide a moment for yourself or with friends over excellent coffee, sandwiches, and fresh pastries.</p>
-                <p>Made to be the coffee you love. We're glad you're here.</p>
-            </div>
+        <div class="home-meta">
+          <div>
+            <h4>Coffee</h4>
+            <p>Single origin,<br>roasted weekly</p>
+          </div>
+          <div>
+            <h4>Pantry</h4>
+            <p>Sandwiches, salads,<br>pastries and snacks</p>
+          </div>
         </div>
-    </section>
-    
-    <!-- Footer with Newsletter (loaded from footer.js) -->
-    <div id="footer-placeholder"></div>
+      </section>
 
-    <!-- Load shared components -->
-    <script src="nav.js"></script>
-    <script src="footer.js"></script>
+      <section class="home-feature">
+        <p class="eyebrow">Shop</p>
+        <div class="home-feature-mark" aria-hidden="true">
+          <svg class="logo-o" viewBox="195 8 92 89" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F4F1E7" d="M241.674 24.1904C235.041 25.1588 229.056 30.0218 225.041 35.028C220.004 41.9473 218.12 51.0778 217.742 59.9637C217.394 69.6671 220.575 76.2132 229.823 79.6267C238.384 82.7267 249.024 83.537 256.357 77.6653C267.818 68.3372 270.304 48.4596 262.647 35.7127C258.411 28.16 250.423 23.0888 241.799 24.1742L241.674 24.1904ZM207.353 79.6176C196.146 67.1529 197.546 52.3069 204.264 38.0253C209.523 27.6456 217.72 17.2372 228.878 13.4088C238.026 10.9266 255.652 11.4299 263.793 16.5837C268.186 19.2422 271.608 23.2247 274.682 27.3848C280.214 34.7301 283.761 43.2018 283.912 51.8354C284.077 57.0366 283.771 62.5045 282.184 67.4937C278.49 78.7825 267.157 89.0927 255.499 92.8463C249.202 94.9208 242.415 94.6171 235.818 93.6774C225.084 92.0978 214.442 87.9351 207.44 79.719L207.353 79.6176Z"/>
+          </svg>
+        </div>
+        <div class="home-feature-info">
+          <span class="home-feature-name">Locally roasted beans,<br>delivered to your door.</span>
+          <a href="https://shop.skoomcoffee.com" class="home-feature-link" target="_blank" rel="noopener">Shop here &rarr;</a>
+        </div>
+      </section>
+    </main>
+    </div>
 
-    <!-- Parallax Effect for Echinacea -->
-    <script>
-        window.addEventListener('scroll', function() {
-            const echinacea = document.getElementById('echinacea');
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.3; // Slower movement = more subtle
-            
-            echinacea.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        });
-    </script>
+    <footer class="footer">
+      <div class="footer-cols">
+        <div>
+          <h4>Visit</h4>
+          <p>197 King St East<br>Toronto, ON M5A 1J5</p>
+          <p style="margin-top:8px;">Mon–Sun · 7am–7pm</p>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <div class="footer-col-links">
+            <a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a>
+            <a href="https://www.instagram.com/skoomcoffee" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://open.spotify.com/playlist/1CdDKGnoMFmY5A61uam1Hn?si=EDJbJZqfTZiUx_zCRr8WBQ" target="_blank" rel="noopener">Listen</a>
+          </div>
+        </div>
+        <div class="newsletter-block">
+          <h4>Newsletter</h4>
+          <p class="helper">Once a month never more — learn about new beans, events and more.</p>
+          <form class="newsletter" onsubmit="event.preventDefault(); this.classList.add('success'); this.querySelector('input').value=''; this.querySelector('input').placeholder='Subscribed — see you soon.';">
+            <input type="email" placeholder="Email address" required aria-label="Email address">
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">
+        <img src="skoom.svg" alt="">
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

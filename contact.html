@@ -1,195 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Contact - Skoom Coffee</title>
-    <style>
-        body {
-            background-color: var(--cream);
-            color: var(--brown);
-        }
-
-        /* Page Content */
-        .page-content {
-            padding-top: 140px;
-            min-height: 100vh;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-bottom: 6rem;
-        }
-
-        .page-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--brown);
-            opacity: 0.5;
-            margin-bottom: 2rem;
-        }
-
-        .page-header h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            color: var(--brown);
-            margin-bottom: 4rem;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        /* Contact Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 5rem 4rem;
-            margin-bottom: 6rem;
-        }
-
-        .contact-item h3 {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--brown);
-            opacity: 0.5;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item p {
-            color: var(--brown);
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item a {
-            color: var(--brown);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s ease;
-        }
-
-        .contact-item a:hover {
-            border-bottom: 1px solid var(--brown);
-        }
-
-        /* Map Section */
-        .map-section {
-            margin-top: 6rem;
-        }
-
-        .map-section h2 {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--brown);
-            opacity: 0.5;
-            margin-bottom: 2rem;
-        }
-
-        .map-section iframe {
-            width: 100%;
-            height: 500px;
-            margin-bottom: 2rem;
-            filter: grayscale(20%);
-        }
-
-        .map-info {
-            text-align: center;
-            color: var(--brown);
-        }
-
-        .map-info p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .directions-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.75rem 2rem;
-            color: var(--brown);
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            border: 1px solid var(--brown);
-            transition: all 0.3s ease;
-        }
-
-        .directions-link:hover {
-            background-color: var(--brown);
-            color: var(--cream);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .map-section iframe {
-                height: 350px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skoom — Contact</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation (loaded from nav.js) -->
-    <div id="nav-placeholder"></div>
+  <div class="page">
+    <div class="viewport">
+    <header class="nav">
+      <a href="index.html" class="logo" aria-label="Skoom Coffee home">Skoom<span class="reg">&reg;</span>Coffee</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
 
-    <!-- Page Content -->
-    <div class="page-content">
-        <p class="page-label">Contact</p>
-        <div class="page-header">
-            <h1>Get In Touch</h1>
+    <main class="contact-main">
+      <section class="contact-left">
+        <p class="eyebrow">Find us / Reach us</p>
+        <h2>Coffee tastes<br>better <em>in person.</em></h2>
+        <div class="contact-coords">
+          <div>
+            <h4>Address</h4>
+            <p>197 King St East<br>Toronto, ON<br>M5A 1J5</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Sun<br>7am — 7pm</p>
+          </div>
         </div>
+      </section>
 
-        <!-- Contact Grid -->
-        <div class="contact-grid">
-            <div class="contact-item">
-                <h3>Visit</h3>
-                <p>197 King St East<br>Toronto, ON M5A 1J5</p>
-                <p style="margin-top: 1rem; opacity: 0.7; font-size: 1rem;">Mon–Sun 7am–7pm</p>
-            </div>
-
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a></p>
-            </div>
-
-            <div class="contact-item">
-                <h3>Instagram</h3>
-                <p><a href="https://instagram.com/skoomcoffee" target="_blank">@skoomcoffee</a></p>
-            </div>
-        </div>
-
-        <!-- Map Section -->
-        <div class="map-section">
-            <h2>Location</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.8786703530973!2d-79.3699522!3d43.65069259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cbc631735ad5%3A0x9aecd5165cf9c04!2sSkoom%20%E2%80%94%20Coming%20soon!5e0!3m2!1sen!2sca!4v1776352758813!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="map-info">
-                <p>Located in a heritage building in downtown Toronto,<br>across from George Brown College and steps from St. Lawrence Market</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=197+King+St+East+Toronto+ON+M5A+1J5" target="_blank" class="directions-link">Get Directions</a>
-            </div>
-        </div>
+      <section class="contact-card">
+        <p class="eyebrow">General</p>
+        <h3>info@skoomcoffee.com</h3>
+        <a href="mailto:info@skoomcoffee.com" class="inline">Send a note →</a>
+      </section>
+    </main>
     </div>
 
-    <!-- Footer (loaded from footer.js) -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Load shared components -->
-    <script src="nav.js"></script>
-    <script src="footer.js"></script>
+    <footer class="footer">
+      <div class="footer-cols">
+        <div>
+          <h4>Visit</h4>
+          <p>197 King St East<br>Toronto, ON M5A 1J5</p>
+          <p style="margin-top:8px;">Mon–Sun · 7am–7pm</p>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <div class="footer-col-links">
+            <a href="mailto:info@skoomcoffee.com">info@skoomcoffee.com</a>
+            <a href="https://www.instagram.com/skoomcoffee" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://open.spotify.com/playlist/1CdDKGnoMFmY5A61uam1Hn?si=EDJbJZqfTZiUx_zCRr8WBQ" target="_blank" rel="noopener">Listen</a>
+          </div>
+        </div>
+        <div class="newsletter-block">
+          <h4>Newsletter</h4>
+          <p class="helper">Once a month never more — learn about new beans, events and more.</p>
+          <form class="newsletter" onsubmit="event.preventDefault(); this.classList.add('success'); this.querySelector('input').value=''; this.querySelector('input').placeholder='Subscribed — see you soon.';">
+            <input type="email" placeholder="Email address" required aria-label="Email address">
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">
+        <img src="skoom.svg" alt="">
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
