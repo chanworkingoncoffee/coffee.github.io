@@ -549,19 +549,39 @@ input { font-family: inherit; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
+  .page {
+    padding: 20px 20px;
+  }
+
   .viewport { min-height: 0; }
+
+  .nav-links {
+    gap: 16px;
+  }
+
   .home-main,
   .events-main,
   .contact-main {
     grid-template-columns: 1fr;
   }
+
   .footer-cols { grid-template-columns: 1fr; gap: 24px; }
+
   .events-list li {
     grid-template-columns: 80px 1fr;
     grid-template-rows: auto auto;
     gap: 8px 16px;
   }
+
   .event-time { grid-column: 2; }
   .event-tag { grid-column: 2; justify-self: start; }
   .events-soon { padding: 32px; }
+
+  .contact-card h3 {
+    margin-top: 20px;
+  }
+
+  .contact-card a.inline {
+    margin-top: 16px;
+  }
 }
