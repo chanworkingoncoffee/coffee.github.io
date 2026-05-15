@@ -540,6 +540,8 @@ input { font-family: inherit; }
   width: calc(100% + 72px + 20vw);
   margin: 0 calc(-36px - 10vw) -28px;
   display: flex;
+  overflow: hidden;
+  touch-action: pan-y;
 }
 
 .footer-wordmark img,
