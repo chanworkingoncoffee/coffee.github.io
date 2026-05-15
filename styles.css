@@ -6,11 +6,24 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-  height: auto;
+html {
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 36px;
+  gap: 28px;
+  touch-action: pan-y;
 }
 
 body {
