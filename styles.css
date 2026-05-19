@@ -13,17 +13,6 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  padding: 28px 36px;
-  gap: 28px;
-  touch-action: pan-y;
-}
-
-body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--latte);
   color: var(--bean);
@@ -46,10 +35,9 @@ a:hover {
 }
 
 button { font-family: inherit; cursor: pointer; }
-
 input { font-family: inherit; }
 
-/* Page shell — nav + main fill viewport, footer sits below the fold */
+/* Page shell */
 .page {
   display: flex;
   flex-direction: column;
@@ -61,7 +49,6 @@ input { font-family: inherit; }
   display: flex;
   flex-direction: column;
   gap: 28px;
-  min-height: calc(100vh - 56px);
 }
 
 .viewport > main {
@@ -203,9 +190,7 @@ input { font-family: inherit; }
   overflow: hidden;
 }
 
-.home-feature .eyebrow {
-  color: var(--latte);
-}
+.home-feature .eyebrow { color: var(--latte); }
 
 .home-feature-mark {
   display: flex;
@@ -303,9 +288,7 @@ input { font-family: inherit; }
   justify-content: space-between;
 }
 
-.events-aside .eyebrow {
-  color: var(--latte);
-}
+.events-aside .eyebrow { color: var(--latte); }
 
 .events-aside h2 {
   font-size: clamp(32px, 3.4vw, 48px);
@@ -447,9 +430,7 @@ input { font-family: inherit; }
   border-color: transparent;
 }
 
-.contact-card.dark .eyebrow {
-  color: var(--latte);
-}
+.contact-card.dark .eyebrow { color: var(--latte); }
 
 .contact-card h3 {
   font-size: clamp(20px, 1.9vw, 26px);
@@ -532,9 +513,7 @@ input { font-family: inherit; }
   letter-spacing: 0.01em;
 }
 
-.newsletter input::placeholder {
-  color: var(--bean);
-}
+.newsletter input::placeholder { color: var(--bean); }
 
 .newsletter button {
   border: none;
@@ -545,13 +524,12 @@ input { font-family: inherit; }
   line-height: 1;
 }
 
-/* Wordmark anchor — full bleed, 20% larger than viewport width */
+/* Wordmark anchor — full bleed */
 .footer-wordmark {
   width: calc(100% + 72px + 20vw);
   margin: 0 calc(-36px - 10vw) -28px;
   display: flex;
   overflow: hidden;
-  touch-action: pan-y;
 }
 
 .footer-wordmark img,
@@ -567,15 +545,14 @@ input { font-family: inherit; }
     padding: 20px 20px;
   }
 
-  .viewport { min-height: 0; }
-
   .nav-links {
     gap: 16px;
   }
 
   .home-main,
   .events-main,
-  .contact-main {
+  .contact-main,
+  .listen-main {
     grid-template-columns: 1fr;
   }
 
@@ -591,11 +568,11 @@ input { font-family: inherit; }
   .event-tag { grid-column: 2; justify-self: start; }
   .events-soon { padding: 32px; }
 
-  .contact-card h3 {
-    margin-top: 20px;
-  }
+  .contact-card h3 { margin-top: 20px; }
+  .contact-card a.inline { margin-top: 16px; }
 
-  .contact-card a.inline {
-    margin-top: 16px;
+  .footer-wordmark {
+    width: calc(100% + 40px);
+    margin: 0 -20px -20px;
   }
 }
