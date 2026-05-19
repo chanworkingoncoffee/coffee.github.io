@@ -51,6 +51,13 @@ input { font-family: inherit; }
   gap: 28px;
 }
 
+.home-statement,
+.contact-card,
+.events-soon,
+.listen-right {
+  overflow: visible;
+}
+
 .viewport > main {
   flex: 1;
   min-height: 0;
